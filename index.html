@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Travel Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Exploreo</h1>
+            <p>Plan your perfect Kerala getaway</p>
+        </div>
+
+        <!-- Grid Layout for Cards -->
+        <div class="grid">
+            <!-- General Trip Planning Card -->
+            <div class="card">
+                <h2>Plan Your Trip</h2>
+
+                <div class="form-group">
+                    <label for="destination">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Destination
+                    </label>
+                    <select id="destination">
+                        <option value="">Select destination</option>
+                        <option value="Munnar">Munnar</option>
+                        <option value="Alleppey">Alleppey</option>
+                        <option value="Wayanad">Wayanad</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="days">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+                            <line x1="16" x2="16" y1="2" y2="6" />
+                            <line x1="8" x2="8" y1="2" y2="6" />
+                            <line x1="3" x2="21" y1="10" y2="10" />
+                        </svg>
+                        Number of Days
+                    </label>
+                    <input type="number" id="days" min="1" max="14" value="1">
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2 2 6" />
+                            <path d="m2 6 4 4" />
+                            <path d="M14 2h-4" />
+                            <path d="M9 6h5" />
+                            <path d="M12 10h2" />
+                            <path d="M22 2h-4" />
+                            <path d="M17 6h5" />
+                            <path d="M20 10h2" />
+                        </svg>
+                        Budget Range
+                    </label>
+                    <select id="budget">
+                        <option value="budget">Budget</option>
+                        <option value="moderate" selected>Moderate</option>
+                        <option value="luxury">Luxury</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="weather">
+                        <svg id="weatherIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4" />
+                            <path d="M12 2v2" />
+                            <path d="M12 20v2" />
+                            <path d="m4.93 4.93 1.41 1.41" />
+                            <path d="m17.66 17.66 1.41 1.41" />
+                            <path d="M2 12h2" />
+                            <path d="M20 12h2" />
+                            <path d="m6.34 17.66-1.41 1.41" />
+                            <path d="m19.07 4.93-1.41 1.41" />
+                        </svg>
+                        Weather
+                    </label>
+                    <select id="weather">
+                        <option value="sunny">Sunny</option>
+                        <option value="rainy">Rainy</option>
+                    </select>
+                </div>
+
+                <button id="generate" class="button">Generate Itinerary</button>
+            </div>
+
+            <!-- Mood-Based Trip Planning Card -->
+            <div class="card">
+                <h2>Plan Your Trip Based on Mood</h2>
+
+                <div class="form-group">
+                    <label for="mood">Select Mood:</label>
+                    <select id="mood">
+                        <option value="relaxed">Relaxed</option>
+                        <option value="adventurous">Adventurous</option>
+                        <option value="romantic">Romantic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mood-destination">Select Destination:</label>
+                    <select id="mood-destination">
+                        <option value="Munnar">Munnar</option>
+                        <!-- Add more destinations if needed -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mood-days">Number of Days:</label>
+                    <input type="number" id="mood-days" placeholder="Enter number of days">
+                </div>
+
+                <button id="generate-mood">Generate Mood-Based Itinerary</button>
+            </div>
+
+            <!-- Itinerary Section -->
+            <div class="card">
+                <h2>Your Itinerary</h2>
+                <div id="itinerary" class="itinerary">
+                    <div class="empty-state">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+                        </svg>
+                        <p>Fill in your preferences and generate an itinerary to start planning your Kerala adventure!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
